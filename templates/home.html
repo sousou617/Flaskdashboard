@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <!-- <link rel="stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/style.css') }}"> -->
+</head>
+<body>
+<!--   <ul>
+    {% for n in my_list %}
+    <li>{{n}}</li>
+    {% endfor %}
+  </ul> -->
+
+{% extends 'layout.html' %} 
+
+{% block body %}
+
+
+
+<!-- Navigation -->
+    
+      <nav class="navbar navbar-expand-lg p-3 mb-2 bg-dark text-white border-bottom">
+       <!--  <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button> -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Slack</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Contact</a>
+                <a class="dropdown-item" href="/login">Login</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+   
+
+    <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <h2 class="sidebar-heading"><strong>DASHBOARD</strong></h2>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">SLA Data</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">KPIs</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">JavaDocs</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">API Docs</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">User State</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Code Coverage</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <div class="container">
+    <!-- Page Content -->
+    
+      <h1 class="mt-4">Dashboard</h1>
+      
+      <div class="row align-items-start">
+        <div class="col">
+          One of three columns
+        </div>
+        <div class="col">
+          One of three columns
+        </div>
+        <div class="col">
+          One of three columns
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col">
+          One of three columns
+        </div>
+        <div class="col">
+          One of three columns
+        </div>
+        <div class="col">
+          One of three columns
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <div class="col">
+          One of three columns
+        </div>
+        <div class="col">
+          One of three columns
+        </div>
+        <div class="col">
+          One of three columns
+        </div>
+      </div>
+
+    </div>. <!-- /.container -->
+
+      <script>
+            $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+          });
+      </script>
+
+   </div> <!-- sidebar #wrapper -->
+
+{% endblock %}
+
+
+</body>
+</html>
+
+
+
+
+  
