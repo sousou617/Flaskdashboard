@@ -11,7 +11,6 @@ app.config['SERVER_NAME'] = 'localhost:5000'
 
 Bootstrap(app)
 
-
 @app.route('/')
 def home():
     return render_template('home.html', argument_dict)
