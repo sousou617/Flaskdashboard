@@ -1,128 +1,122 @@
 <!DOCTYPE html>
-<html>
-<head>
   <meta charset="utf-8">
   <title>Dashboard</title>
   <link rel="stylesheet" href="static/css/style.css">
   <!-- <link rel="stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/style.css') }}"> -->
-</head>
-<body>
-<!--   <ul>
-    {% for n in my_list %}
-    <li>{{n}}</li>
-    {% endfor %}
-  </ul> -->
 
 {% extends 'layout.html' %} 
 
 {% block body %}
 
+ <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Dashboard</h3>
+            </div>
 
+            <ul class="list-unstyled components">
+                <p>Dashboard</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapse">Home</a>
+                    <ul class="list-unstyled collapse" id="homeSubmenu">
+                        <li>
+                            <a href="/login">Login</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">SPA</a>
+                </li>              
+                  <li>
+                    <a href="#">KPI Performance</a>
+                </li>
+                <li>
+                    <a href="#">Javadocs</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
 
-<!-- Navigation -->
-    
-      <nav class="navbar navbar-expand-lg p-3 mb-2 bg-dark text-white border-bottom">
-       <!--  <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button> -->
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://flask-appbuilder.readthedocs.io/en/latest/quickcharts.html" class="download">Charts Info</a>
+                </li>
+                <li>
+                    <a href="https://flask.palletsprojects.com/en/1.1.x/" class="article">Flask</a>
+                </li>
+            </ul>
+        </nav>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Page Content  -->
+        <div id="content">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Slack</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Account
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Contact</a>
-                <a class="dropdown-item" href="/login">Login</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                      <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                </div>
+            </nav>
+
+            <h2>SPA metrics</h2>
+            
+
+            <div class="line"></div>
+
+            <h2>API metrics</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+
+            <div class="line"></div>
+
+            <h2>JAVAdocs</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+
+            <div class="line"></div>
+
         </div>
-      </nav>
-   
-
-    <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <h2 class="sidebar-heading"><strong>DASHBOARD</strong></h2>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">SLA Data</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">KPIs</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">JavaDocs</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">API Docs</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">User State</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Code Coverage</a>
-      </div>
     </div>
-    <!-- /#sidebar-wrapper -->
 
-    <div class="container">
-    <!-- Page Content -->
-    
-      <h1 class="mt-4">Dashboard</h1>
-      
-      <div class="row align-items-start">
-        <div class="col">
-          One of three columns
-        </div>
-        <div class="col">
-          One of three columns
-        </div>
-        <div class="col">
-          One of three columns
-        </div>
-      </div>
-      <div class="row align-items-center">
-        <div class="col">
-          One of three columns
-        </div>
-        <div class="col">
-          One of three columns
-        </div>
-        <div class="col">
-          One of three columns
-        </div>
-      </div>
-      <div class="row align-items-end">
-        <div class="col">
-          One of three columns
-        </div>
-        <div class="col">
-          One of three columns
-        </div>
-        <div class="col">
-          One of three columns
-        </div>
-      </div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    </div>. <!-- /.container -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
 
-      <script>
-            $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-          });
-      </script>
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
 
-   </div> <!-- sidebar #wrapper -->
+
+
+
 
 {% endblock %}
 
-
-</body>
-</html>
 
 
 
